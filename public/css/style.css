@@ -1,0 +1,71 @@
+body {
+	background: linear-gradient(rgb(134, 127, 234), rgb(109, 100, 100));
+	margin: 0;
+	color: rgb(239, 233, 233);
+	min-height: 100vh;
+	font-family: 'Times New Roman', Times, serif
+  }
+  
+  #title {
+	display: flex;
+	margin: 10px;
+	padding: 10px;
+	font-size: 7rem;
+	color: #eb9011;
+	font-family: 'Niconne', Trattatello;
+	text-shadow: 2px 2px 2px #bc5810,
+	  10px 10px 0px #010000,
+	  15px 15px 0px #030303,
+	  20px 20px 0px #221e1a,
+	  25px 25px 0px #5a5a5a,
+	  30px 30px 0px #ffe8d5,
+	  35px 35px 0px #726f6f,
+	  40px 40px 0px #0f100f,
+	  45px 45px 0px #504f4f;
+  }
+  
+  #mission-statement {
+	display: flex;
+	margin: 1px;
+	padding-left: 100px;
+	font-family: 'Niconne', Trattatello;
+	font-size: 40px;
+  }
+  
+  #sign-in-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column: span 2;
+	background-color: transparent;
+	border: 2px solid white;
+	color: rgb(18, 15, 15);
+	padding: .5rem 1rem;
+	cursor: pointer;
+	border-radius: 1rem;
+  
+  }
+  
+  #sign-in-button:hover {
+	background: linear-gradient(#eb9011, rgb(28, 28, 28));
+	box-shadow: 10px 10px 600px 20px rgb(49, 63, 111);
+  }
+  
+  #sign-up-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column: span 2;
+	background-color: transparent;
+	border: 2px solid white;
+	color: rgb(18, 15, 15);
+	padding: .5rem 1rem;
+	cursor: grabbing;
+	border-radius: 1rem;
+  
+  }
+  
+  #sign-up-button:hover {
+	background: linear-gradient(#eb9011, rgb(28, 28, 28));
+	box-shadow: 10px 10px 600px 20px rgb(49, 63, 111);
+  }
