@@ -39,6 +39,10 @@ FoodPosting.init(
     end_time: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+    comment: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     }
   },
   {

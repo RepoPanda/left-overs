@@ -1,9 +1,20 @@
 const router = require('express').Router();
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
+const {FoodPosting} = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
+    const dbRes = await FoodPosting.findAll();
+    const foodPostings = dbRes.map(posting => {
+      return posting.get({ plain: true });
+    });
+    console.log(foodPostings);
+    
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+      first_name: req.session.first_name,
+      foodPostings: foodPostings
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -18,6 +29,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/foodadd',withAuth, (req, res) => {
 
+  res.render('loggedInDonator', {
+    logged_in: req.session.logged_in,
+    first_name: req.session.first_name
+  });
+});
 
 module.exports = router;
