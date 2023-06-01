@@ -1,0 +1,12 @@
+<nav>
+	<a id="home" href="/">HOME</a>
+	<br>
+	{{#if logged_in}}
+	<a id="logout" href="#">LOGOUT</a>
+	<br>
+    <a id="addfoodbutton" href="/foodadd">Add Food</a>
+	{{else}}
+	<a id="login" href="/login">LOGIN</a>
+	<br>
+	{{/if}}
+</nav>

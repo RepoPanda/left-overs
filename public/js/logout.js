@@ -1,5 +1,6 @@
-const logout = async () => {
-  const response = await fetch('/api/users/logout', {
+const logout = async (e) => {
+  e.preventDefault();
+  const response = await fetch('/api/donators/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
   });

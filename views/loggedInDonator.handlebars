@@ -1,0 +1,57 @@
+{{> nav }}
+       <div id="title">LEFTOVERS</div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4 list-container">
+          <div class="card">
+            <ul class="list-group"></ul>
+          </div>
+        </div>
+        <h1>Food Posting Form:</h1>
+          <form class="foodadd">
+            <h3>Enter the adress where this food can be picked up:</h3>
+            <input
+            class="address"
+            placeholder="e.g. 123 Main st."
+            maxlength="150"
+            type="text"
+          /> 
+          <h3>Give a detailed description of the food you are posting:</h3>
+          <input
+            class="food_types"
+            placeholder="e.g. Box of Pizza, 2x Burgers"
+            maxlength="30"
+            type="text"
+          /> 
+          <h3>Enter any allergens this food may contain:</h3>
+          <input
+            class="allergens"
+            placeholder="e.g. Milk, Nuts"
+            maxlength="30"
+            type="text"
+          />
+          <h3>When will this food be available to pick up:</h3>
+          <input
+            class="start_time"
+            placeholder="Start-Time"
+            maxlength="30"
+            min= ""
+            type="datetime-local"
+          /> 
+          <input
+            class="end_time"
+            placeholder="End-Time"
+            maxlength="30"
+            type="datetime-local" 
+          /> 
+          <h3>Add any extra comments you would like to include:</h3>
+          <textarea class="comment" placeholder="Type extra comments here"></textarea>
+          <br>
+          <br>
+          <button type="submit" class="submit-button">Submit</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+    <script src="/js/foodadd.js"></script>
