@@ -1,0 +1,109 @@
+body {
+  background: linear-gradient(rgb(134, 127, 234), rgb(109, 100, 100));
+  margin: 0;
+  color: rgb(239, 233, 233);
+  min-height: 100vh;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#title {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  font-size: 7rem;
+  color: #eb9011;
+  font-family: "Niconne", Trattatello;
+  text-shadow: 2px 2px 2px #bc5810, 10px 10px 0px #010000, 15px 15px 0px #030303,
+    20px 20px 0px #221e1a, 25px 25px 0px #5a5a5a, 30px 30px 0px #ffe8d5,
+    35px 35px 0px #726f6f, 40px 40px 0px #0f100f, 45px 45px 0px #504f4f;
+}
+
+#mission-statement {
+  display: flex;
+  margin: 1px;
+  padding-left: 100px;
+  font-family: "Niconne", Trattatello;
+  font-size: 40px;
+}
+
+#home,
+#login,
+#logout {
+  display: flex;
+  justify-content: center;
+  justify-items: stretch;
+  grid-column: 1;
+  font-family: "Times New Roman", Times, serif;
+  background: linear-gradient(#eb9011, rgb(28, 28, 28));
+  border: 2px solid #eb9011;
+  color: rgb(18, 15, 15);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+#home:hover,
+#login:hover,
+#logout:hover {
+  background: linear-gradient(transparent, rgb(28, 28, 28));
+  box-shadow: 10px 10px 600px 20px rgb(49, 63, 111);
+}
+
+/* This is the button for submitting after filling out the foodadd application */
+.submit-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #070707;
+    background-color: #ffffff;
+    border: black solid 2px;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .submit-button:hover {
+    background-color: rgb(134, 127, 234);
+  }
+  
+  .submit-button:active {
+    background-color: #eb9011;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  /* This is a the form class of the food add application */
+  .foodadd {
+    border: rgb(8, 8, 8) 4px groove;
+  }
+
+  .foodadd:hover {
+    background: linear-gradient(transparent, #eb9011);
+  }
+
+  /* This is the button for adding food from nav.handlebars */
+  #addfoodbutton {
+      padding: 10px 20px;
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #070707;
+      background-color: #ffffff;
+      border: black solid 2px;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+    
+    #addfoodbutton:hover {
+      background-color: rgb(134, 127, 234);
+    }
+    
+    #addfoodbutton:active {
+      background-color: #eb9011;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  
+
