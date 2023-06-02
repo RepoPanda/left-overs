@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const {FoodPosting} = require('../models');
+require('dotenv').config();
 
 router.get('/', async (req, res) => {
   try {
@@ -13,7 +14,8 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       logged_in: req.session.logged_in,
       first_name: req.session.first_name,
-      foodPostings: foodPostings
+      foodPostings: foodPostings,
+      API_KEY: process.env.API_KEY
     });
   } catch (err) {
     res.status(500).json(err);

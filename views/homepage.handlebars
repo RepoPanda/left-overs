@@ -8,5 +8,30 @@
 
     <div id="title">LEFTOVERS &trade;</div>
     <p id="mission-statement">Solving World Hunger Daily</p>
+    
 </div>
-<footer></footer>
+<div id="map"></div>
+
+{{#if foodPostings.[0].address}}
+<div>
+    <h1>Available Food Postings:</h1>
+</div>
+<div>
+{{#each foodPostings}}
+<h3>{{this.food_types}}</h3>
+<h4>Allergens:</h4>
+<p>{{this.allergens}}</p>
+<p>{{this.address}}</p>
+{{/each}}
+<div>
+
+
+
+{{else}}
+<h2>There are no available food postings at this time. Check back in for updated postings!</h2>
+{{/if}}
+
+<footer>
+</footer>
+<script src="/js/googlemap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{API_KEY}}&callback=initMap&v=weekly" defer></script>

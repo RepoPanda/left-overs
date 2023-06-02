@@ -42,7 +42,15 @@ FoodPosting.init(
     },
     comment: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
+    },
+    latitude:{
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    longitude:{
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {

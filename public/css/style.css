@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(rgb(134, 127, 234), rgb(109, 100, 100));
+  background: linear-gradient(rgb(161, 160, 160), rgb(89, 88, 88));
   margin: 0;
   color: rgb(239, 233, 233);
   min-height: 100vh;
@@ -31,13 +31,11 @@ body {
 #logout {
   display: flex;
   justify-content: center;
-  justify-items: stretch;
-  grid-column: 1;
+  text-decoration: none;
   font-family: "Times New Roman", Times, serif;
   background: linear-gradient(#eb9011, rgb(28, 28, 28));
   border: 2px solid #eb9011;
-  color: rgb(18, 15, 15);
-  padding: 0.5rem 1rem;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   border-radius: 1rem;
 }
@@ -45,65 +43,139 @@ body {
 #home:hover,
 #login:hover,
 #logout:hover {
-  background: linear-gradient(transparent, rgb(28, 28, 28));
-  box-shadow: 10px 10px 600px 20px rgb(49, 63, 111);
+  background-color: #955c0c;
+}
+
+#home:hover,
+#login:hover,
+#logout:hover {
+  background-color: #eb9011;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 /* This is the button for submitting after filling out the foodadd application */
 .submit-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #070707;
-    background-color: #ffffff;
-    border: black solid 2px;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-  }
-  
-  .submit-button:hover {
-    background-color: rgb(134, 127, 234);
-  }
-  
-  .submit-button:active {
-    background-color: #eb9011;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #070707;
+  background-color: #eb9011;
+  border: black solid 2px;
+  border-radius: 15px;
+}
 
-  /* This is a the form class of the food add application */
-  .foodadd {
-    border: rgb(8, 8, 8) 4px groove;
-  }
+.submit-button:hover {
+  background-color: #955c0c;
+}
 
-  .foodadd:hover {
-    background: linear-gradient(transparent, #eb9011);
-  }
+.submit-button:active {
+  background-color: #eb9011;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 
-  /* This is the button for adding food from nav.handlebars */
-  #addfoodbutton {
-      padding: 10px 20px;
-      font-size: 18px;
-      text-align: center;
-      cursor: pointer;
-      outline: none;
-      color: #070707;
-      background-color: #ffffff;
-      border: black solid 2px;
-      border-radius: 15px;
-      box-shadow: 0 9px #999;
-    }
-    
-    #addfoodbutton:hover {
-      background-color: rgb(134, 127, 234);
-    }
-    
-    #addfoodbutton:active {
-      background-color: #eb9011;
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
-  
+/* This is a the form class of the food add application */
+.foodadd,
+.FoodPostingFormTitle {
+  border-color: #eb9011;
+  color: rgb(11, 11, 11);
+  border: 4px inset;
+  border-color: #eb9011;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+}
 
+.foodadd:hover {
+  background: linear-gradient(transparent, #955c0c);
+}
+
+/* This is the button for adding food from nav.handlebars */
+#addfoodbutton {
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  color: #070707;
+  background-color: #eb9011;
+  border: black solid 2px;
+  border-radius: 15px;
+}
+
+#addfoodbutton:hover {
+  background-color: #955c0c;
+}
+
+#addfoodbutton:active {
+  background-color: #eb9011;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.signup-dona-form,
+.login-dona-form {
+  border: rgb(8, 8, 8) 4px inset;
+  border-color: #eb9011;
+  font-family: 'Times New Roman', Times, serif;
+  color: #010000;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  cursor: wait;
+}
+
+.signup-dona-form:hover,
+.login-dona-form:hover {
+  background: linear-gradient(transparent, #955c0c);
+}
+
+#firstname-signup-dona,
+#lastname-signup-dona,
+#business-signup-dona,
+#email-signup-dona,
+#password-signup-dona,
+#phone-signup-dona {
+  display: flex;
+  align-items: center;
+}
+
+/* Also the sign up button lol */
+#Login-Button {
+  padding: 3px 5px;
+  margin: 10px 10px 10px 10px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  color: #070707;
+  background-color: #eb9011;
+  border: black solid 2px;
+  border-radius: 15px;
+}
+
+#Login-Button:hover {
+  background-color: #955c0c;
+}
+
+#Login-Button:active {
+  background-color: #eb9011;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* api stuff */
+#map {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
