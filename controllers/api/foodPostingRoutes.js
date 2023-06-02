@@ -1,8 +1,29 @@
 const router = require('express').Router();
 const {FoodPosting} = require('../../models');
+require('dotenv').config();
+const NodeGeocoder = require('node-geocoder');
+
+router.get('/', async (req, res) => {
+  try {
+    const dbRes = await FoodPosting.findAll();
+    res.json(dbRes);
+  } catch (error) {
+    res.json({err: 'Uh oh...'});
+  }
+});
 
 router.post('/', async (req, res) => {
   try {
+
+    const geocoder = NodeGeocoder({ provider: 'google', apiKey: process.env.API_KEY });
+
+    
+    const [{latitude,longitude}] = await geocoder.geocode(req.body.address);
+
+    console.log({latitude,longitude});
+    
+
+
     const dbRes = await FoodPosting.create({
       donator_id: req.session.user_id,
       address: req.body.address,
@@ -10,7 +31,9 @@ router.post('/', async (req, res) => {
       allergens: req.body.allergens,
       start_time: req.body.start_time,
       end_time: req.body.end_time,
-      comment: req.body.comment
+      comment: req.body.comment,
+      latitude,
+      longitude
     });
     res.status(200).json(dbRes);
   } catch(err) {
