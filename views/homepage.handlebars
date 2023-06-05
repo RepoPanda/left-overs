@@ -16,14 +16,24 @@
 <div>
     <h1>Available Food Postings:</h1>
 </div>
+
 <div>
+<ol>
 {{#each foodPostings}}
-<h3>{{this.food_types}}</h3>
+<li><h3>{{this.food_types}}</h3>
 <h4>Allergens:</h4>
 <p>{{this.allergens}}</p>
 <p>{{this.address}}</p>
+<h5>This food will be available for pick up starting at:</h5>
+<p>{{this.start_time}}</p>
+<h5>This food will no longer be available for pick up at:</h5>
+<p>{{this.end_time}}</p>
+<h6>Extra info about this food:</h6>
+<p>{{this.comment}}</p>
+</li>
 {{/each}}
-<div>
+</ol>
+</div>
 
 
 
