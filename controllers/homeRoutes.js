@@ -1,11 +1,18 @@
 const router = require('express').Router();
+const Op = require('sequelize').Op;
 const withAuth = require('../utils/auth');
 const {FoodPosting} = require('../models');
 require('dotenv').config();
 
 router.get('/', async (req, res) => {
   try {
-    const dbRes = await FoodPosting.findAll();
+    const dbRes = await FoodPosting.findAll({
+      where: {
+        end_time: {
+          [Op.gt]: Date.now()
+        }
+      }
+    });
     const foodPostings = dbRes.map(posting => {
       return posting.get({ plain: true });
     });
@@ -38,5 +45,7 @@ router.get('/foodadd',withAuth, (req, res) => {
     first_name: req.session.first_name
   });
 });
+
+
 
 module.exports = router;

@@ -1,38 +1,47 @@
 {{> nav}}
 
-<div>
-
+<div class="wel-container">
     {{#if first_name}}
-    <p>Welcome back {{first_name}}</p>
+    <p class="welcome-back">Welcome back, {{first_name}}!</p>
     {{/if}}
 
-    <div id="title">LEFTOVERS &trade;</div>
-    <p id="mission-statement">Solving World Hunger Daily</p>
-    
 </div>
-<div id="map"></div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
 
 {{#if foodPostings.[0].address}}
 <div>
-    <h1>Available Food Postings:</h1>
+    <h1 class="available-food">Available Food</h1>
 </div>
 
-<div>
-<ol>
-{{#each foodPostings}}
-<li><h3>{{this.food_types}}</h3>
-<h4>Allergens:</h4>
-<p>{{this.allergens}}</p>
-<p>{{this.address}}</p>
-<h5>This food will be available for pick up starting at:</h5>
-<p>{{this.start_time}}</p>
-<h5>This food will no longer be available for pick up at:</h5>
-<p>{{this.end_time}}</p>
-<h6>Extra info about this food:</h6>
-<p>{{this.comment}}</p>
-</li>
-{{/each}}
-</ol>
+<div class="food-posting-wrapper">
+    <ul>
+        {{#each foodPostings}}
+        <li class="food-list-one">
+            <div>
+                <h2 class="food-type-header">{{this.food_types}}</h2>
+            </div>
+            <h5 class="address-color"><em>{{this.address}}</em></h5>
+            <div>
+                <h5 class="allergens-title">Allergens:</h5>
+                <p class="allergens-title"><strong>{{this.allergens}}</strong></p>
+                <h5 class="extra-food-color">Extra info about this food:</h5>
+                <p>{{this.comment}}</p>
+                <div>
+                    <h5 class="extra-food-color">This food will be available:</h5>
+                    <p><em>{{format_time this.start_time}} </em><span>-</span> {{format_time this.end_time}}</p>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
 </div>
 
 

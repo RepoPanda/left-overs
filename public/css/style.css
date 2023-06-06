@@ -1,56 +1,60 @@
 body {
-  background: linear-gradient(rgb(161, 160, 160), rgb(89, 88, 88));
+  /* background: linear-gradient(rgb(161, 160, 160), rgb(89, 88, 88)); */
+  background-color: rgb(0, 0, 0);
   margin: 0;
-  color: rgb(239, 233, 233);
+  /* color: rgb(0, 0, 0); */
   min-height: 100vh;
-  font-family: "Times New Roman", Times, serif;
+}
+
+.page-header-parent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+  flex-direction: row;
 }
 
 #title {
-  display: flex;
-  margin: 10px;
-  padding: 10px;
-  font-size: 7rem;
+  flex-grow: 1;
+  font-size: 6rem;
+  margin-left: 20px;
   color: #eb9011;
   font-family: "Niconne", Trattatello;
-  text-shadow: 2px 2px 2px #bc5810, 10px 10px 0px #010000, 15px 15px 0px #030303,
-    20px 20px 0px #221e1a, 25px 25px 0px #5a5a5a, 30px 30px 0px #ffe8d5,
-    35px 35px 0px #726f6f, 40px 40px 0px #0f100f, 45px 45px 0px #504f4f;
+  text-shadow: 2px 2px 2px #fbfbfb, 10px 10px 0px rgb(23, 23, 22), 15px 15px 0px #f9f9f9;
+  /* 20px 20px 0px #e3e3e2, 25px 25px 0px #5a5a5a, 30px 30px 0px #ffffff; */
+  /* 35px 35px 0px #726f6f, 40px 40px 0px #0f100f, 45px 45px 0px #504f4f; */
 }
 
-#mission-statement {
-  display: flex;
-  margin: 1px;
-  padding-left: 100px;
+#title h3 {
+  font-size: 2rem;
   font-family: "Niconne", Trattatello;
-  font-size: 40px;
+  color: white;
+  text-shadow: none;
+  margin-left: 100px;
 }
 
 #home,
 #login,
-#logout {
-  display: flex;
-  justify-content: center;
+#logout,
+#addfoodbutton {
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 60px;
+  font-style: bold;
   text-decoration: none;
-  font-family: "Times New Roman", Times, serif;
-  background: linear-gradient(#eb9011, rgb(28, 28, 28));
-  border: 2px solid #eb9011;
-  color: rgb(255, 255, 255);
+  border: 4px inset #eb9011;
+  color: #eb9011;
   cursor: pointer;
   border-radius: 1rem;
 }
 
 #home:hover,
 #login:hover,
-#logout:hover {
-  background-color: #955c0c;
-}
-
-#home:hover,
-#login:hover,
-#logout:hover {
+#logout:hover,
+#addfoodbutton:hover {
+  color: black;
   background-color: #eb9011;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px rgb(82, 80, 80);
   transform: translateY(4px);
 }
 
@@ -80,10 +84,10 @@ body {
 /* This is a the form class of the food add application */
 .foodadd,
 .FoodPostingFormTitle {
+  border: 4px groove;
   border-color: #eb9011;
-  color: rgb(11, 11, 11);
-  border: 4px inset;
-  border-color: #eb9011;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
   font-family: 'Times New Roman', Times, serif;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
@@ -93,36 +97,13 @@ body {
   background: linear-gradient(transparent, #955c0c);
 }
 
-/* This is the button for adding food from nav.handlebars */
-#addfoodbutton {
-  padding: 10px 20px;
-  font-size: 18px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-  color: #070707;
-  background-color: #eb9011;
-  border: black solid 2px;
-  border-radius: 15px;
-}
-
-#addfoodbutton:hover {
-  background-color: #955c0c;
-}
-
-#addfoodbutton:active {
-  background-color: #eb9011;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
 .signup-dona-form,
 .login-dona-form {
-  border: rgb(8, 8, 8) 4px inset;
+  color: #fdfdfd;
+  border: 4px groove;
   border-color: #eb9011;
+  border-radius: 10px;
   font-family: 'Times New Roman', Times, serif;
-  color: #010000;
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
   cursor: wait;
@@ -170,7 +151,12 @@ body {
 
 /* api stuff */
 #map {
-  height: 100%;
+  height: 400px;
+  width: 100%;
+  border: 6px groove;
+  border-color: #eb9011;
+  border-radius: 10px;
+  margin-top: 10%;
 }
 
 html,
@@ -178,4 +164,63 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.food-posting-wrapper {
+  font-family: 'Times New Roman', Times, serif;
+  color: #fcfcfc;
+}
+
+.available-food {
+  display: flex;
+  justify-content: center;
+  color: #eb9011;
+  padding-top: 50px;
+}
+
+.food-list-one {
+  border: 4px groove;
+  border-color: #eb9011;
+  border-radius: 10px;
+  list-style-type: none;
+  margin: 20px;
+  padding: 50px 50px 50px 50px;
+}
+
+.food-list-one:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.wel-container {
+  color: #eb9011;
+}
+
+.food-type-header {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  color: #eb9011;
+}
+
+.allergens-title {
+  color: #e20707;
+}
+
+.address-color {
+  color: rgb(84, 137, 5);
+}
+
+.extra-food-color {
+  color: blue;
+}
+
+/* the adjusted login and sign up */
+.last-thing {
+ color: white;
+}
+
+.welcome-back {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
