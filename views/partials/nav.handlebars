@@ -1,12 +1,16 @@
 <nav>
-	<a id="home" href="/">HOME</a>
-	<br>
-	{{#if logged_in}}
-	<a id="logout" href="#">LOG OUT</a>
-	<br>
-    <a id="addfoodbutton" href="/foodadd">	&plus; Add Food &plus;</a>
-	{{else}}
-	<a id="login" href="/login">LOG IN</a>
-	<br>
-	{{/if}}
+	<header class="page-header-parent">
+		<span id="title">LEFTOVERS &trade;
+			<br>
+			<h3>Solving World Hunger Daily!</h3>
+		</span>
+		{{!-- <span id="mission-statement">Solving World Hunger Daily</span> --}}
+		<a id="home" href="/">HOME</a>
+		{{#if logged_in}}
+		<a id="logout" href="#">LOG OUT</a>
+		<a id="addfoodbutton" href="/foodadd">ADD FOOD</a>
+		{{else}}
+		<a id="login" href="/login">LOG IN</a>
+		{{/if}}
+	</header>
 </nav>
