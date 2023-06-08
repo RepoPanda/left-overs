@@ -3139,3 +3139,5 @@ GET / 304 - - 35.342 ms
 GET /api/foodpostings 304 - - 27.315 ms
 GET / 200 3681 - 17.121 ms
 GET /api/foodpostings 304 - - 11.504 ms
+GET / 200 2736 - 22.083 ms
+GET /api/foodpostings 200 791 - 1.940 ms
