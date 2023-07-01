@@ -24,21 +24,26 @@ async function initMap() {
       `${foodPostings[i].address}`,
     ]);
   }
+  console.log(mappedDonations);
 
   // Create an info window to share between markers.
   // var bounds = new google.maps.LatLngBounds();
   const infoWindow = new google.maps.InfoWindow();
+  const bounds = new google.maps.LatLngBounds();
 
   // Create the markers.
   mappedDonations.forEach(([position, title], i) => {
+    console.log(position);
     const marker = new google.maps.Marker({
-      position,
+      position: new google.maps.LatLng(position.lat,position.lng),
       map,
       title: `${i + 1}. ${title}`,
       label: `${i + 1}`,
       optimized: false,
     });
 
+    bounds.extend (marker.position); 
+   
     // Add a click listener for each marker, and set up the info window.
     marker.addListener('click', () => {
       infoWindow.close();
@@ -46,6 +51,8 @@ async function initMap() {
       infoWindow.setContent(createInfoWindowContent(foodPostings));
       infoWindow.open(marker.getMap(), marker);
     });
+
+   
 
     function createInfoWindowContent(foodPostings) {
       const content = `
@@ -56,6 +63,7 @@ async function initMap() {
       return content;
     }
   });
-  // map.fitBounds(bounds);
+  map.fitBounds(bounds);
 }
+
 window.initMap = initMap;
