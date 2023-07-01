@@ -3292,3 +3292,7 @@ GET /foodadd 304 - - 18.583 ms
 POST /api/foodpostings 200 259 - 852.984 ms
 GET / 200 3548 - 525.306 ms
 GET /api/foodpostings 200 772 - 43.578 ms
+GET /foodadd 304 - - 445.946 ms
+GET /foodadd 304 - - 23.522 ms
+GET / 304 - - 90.825 ms
+GET /api/foodpostings 304 - - 8.705 ms
