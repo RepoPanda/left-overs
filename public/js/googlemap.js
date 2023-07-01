@@ -16,10 +16,17 @@ async function initMap() {
   const mappedDonations = [];
 
   for (let i = 0; i < foodPostings.length; i++) {
-    mappedDonations.push([{ lat: parseFloat(foodPostings[i].latitude), lng: parseFloat(foodPostings[i].longitude) }, `${foodPostings[i].address}`]);
+    mappedDonations.push([
+      {
+        lat: parseFloat(foodPostings[i].latitude),
+        lng: parseFloat(foodPostings[i].longitude),
+      },
+      `${foodPostings[i].address}`,
+    ]);
   }
 
   // Create an info window to share between markers.
+  // var bounds = new google.maps.LatLngBounds();
   const infoWindow = new google.maps.InfoWindow();
 
   // Create the markers.
@@ -49,6 +56,6 @@ async function initMap() {
       return content;
     }
   });
+  // map.fitBounds(bounds);
 }
 window.initMap = initMap;
-

@@ -2,10 +2,17 @@ const router = require('express').Router();
 const {FoodPosting} = require('../../models');
 require('dotenv').config();
 const NodeGeocoder = require('node-geocoder');
+const Op = require('sequelize').Op;
 
 router.get('/', async (req, res) => {
   try {
-    const dbRes = await FoodPosting.findAll();
+    const dbRes = await FoodPosting.findAll({
+      where: {
+        end_time: {
+          [Op.gt]: Date.now()
+        }
+      }
+    });
     res.json(dbRes);
   } catch (error) {
     res.json({err: 'Uh oh...'});
